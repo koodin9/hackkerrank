@@ -41,14 +41,28 @@ def rotate_left(a):
 
 def larrysArray(A):
     for i in range(len(A)-2):
+        print("==========================")
+        print("A : {}".format(A))
         if A[i]==i+1:
             continue
         else:
+            print("i : {}".format(i))
+            print("(A.index(i+1)) : {}".format((A.index(i+1))))
+
+            print("(A.index(i+1)-i) : {}".format((A.index(i+1)-i)))
             if (A.index(i+1)-i)%2==0:
+                print("hi")
                 A.remove(i+1)
+                print("A[:i] : {}".format(A[:i]))
+                print("A[i:] : {}".format(A[i:]))
+
                 A=A[:i]+[i+1]+A[i:]
             else:
+                print("hi2")
                 A.remove(i+1)
+                print("A[:i] : {}".format(A[:i]))
+                print("[A[i+1]]+[A[i]] : {}".format([A[i+1]]+[A[i]]))
+                print("A[i+2:] : {}".format(A[i+2:]))
                 A=A[:i]+[i+1]+[A[i+1]]+[A[i]]+A[i+2:]
     if A==sorted(A):
         return ("YES")

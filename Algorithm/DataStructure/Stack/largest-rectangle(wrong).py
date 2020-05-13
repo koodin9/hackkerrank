@@ -14,8 +14,9 @@ def largestRectangle(h):
     print(h)
     for i in range(len(h)):
         left_index = i
-        print(s)
+        print("now i : {}".format(i))
         while len(s) > 0 and s[-1][0] >= h[i]: # 스택이 비어있지 않고 현재 빌딩에서 바로 왼쪽에 있는 빌딩의 높이가 현재 높이보다 크다면(왼쪽으로 확장 가능한 경우)
+            print(s)
             last = s.pop() # 현재 빌딩의 왼쪽 빌딩 정보를 스택에서 pop한다(스택은 현재 빌딩에서 가장 인접한 순서로 데이터를 저장할 수 있음)
             # last[0] : 현재 빌딩 직전 빌딩의 높이, last[1] : 그 빌딩의 인덱스
             left_index = last[1] # 왼쪽으로 인접한 빌딩의 인덱스 정보를 받아옴.
